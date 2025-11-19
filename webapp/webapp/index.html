@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Smart Helmet Dashboard</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header class="topbar"><h1>Smart Helmet</h1></header>
+  <main>
+    <section class="cards">
+      <div class="card neon" id="card-helmet"><h3>Helmet</h3><div id="helmet" class="value">--</div></div>
+      <div class="card neon" id="card-alcohol"><h3>Alcohol</h3><div id="alcohol" class="value">--</div></div>
+      <div class="card neon warning" id="card-accident"><h3>Accident</h3><div id="accident" class="value">--</div></div>
+      <div class="card neon" id="card-engine"><h3>Engine</h3><div id="engine" class="value">--</div></div>
+    </section>
+
+    <section class="mapchart">
+      <div id="map"></div>
+      <div class="chartwrap"><canvas id="alcoholChart"></canvas></div>
+    </section>
+
+    <section class="controls">
+      <button onclick="sendCommand('engine',1)" class="btn">Engine OFF</button>
+      <button onclick="sendCommand('engine',0)" class="btn">Engine ON</button>
+    </section>
+
+    <section class="logs"><h4>Logs</h4><pre id="logs">No logs yet.</pre></section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
